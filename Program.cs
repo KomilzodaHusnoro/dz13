@@ -46,5 +46,19 @@ namespace _1604
             array[0] = newAE;
             return array.Length;
         }
+        public static T[] Slice<T>(T[] array, int begin = 0, int end = 0) // работает только для положительных end
+        {
+            if(end == 0)
+            end = array.Length;
+            if(begin > end - 1){
+            T[] temp = new T[] { };
+            return temp;
+            } else {
+                T[] temp = new T[end - begin];
+                    for(int i = 0; i < end - begin; i++)
+                    {temp[i] = array[begin + i];}
+                return temp;
+            }
+        }
     }
 }
